@@ -567,8 +567,89 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Contact ----- */
 /* --------------------------------------- */
 
-.contact__info {
+.contact {
+    padding: var(--gutter-huge) 0;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.contact__info p {
+    font-size: var(--font-size-normal);
     max-width: var(--container-medium-width);
+    margin-bottom: var(--gutter-normal);
+    line-height: 1.5; /* Added for better readability */
+}
+
+/* Contact form container */
+.contact__form {
+    max-width: var(--container-small-width);
+    margin: 0 auto; /* Center the form on larger screens */
+}
+
+/* Form group styling for spacing */
+.form-group {
+    margin-bottom: var(--gutter-small-1);
+}
+
+/* Label styling */
+label {
+    display: block;
+    font-size: var(--font-size-normal);
+    margin-bottom: var(--gutter-small);
+    color: var(--white); /* Ensures labels are visible against dark background */
+}
+
+/* Input and textarea styling */
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: var(--font-size-small);
+    background-color: #333; /* Dark background for input fields */
+    color: var(--white);
+    border: none;
+    border-bottom: 2px solid var(--white-1); /* Subtle bottom border */
+    margin-bottom: var(--gutter-small);
+    border-radius: 4px; /* Slight rounding for smoother visuals */
+}
+
+/* Focus state for inputs and textareas */
+input:focus, textarea:focus {
+    outline: none;
+    border-bottom-color: var(--pink); /* Highlight border on focus */
+    background-color: #444; /* Slight background change on focus */
+    transition: background-color 0.3s ease, border-bottom-color 0.3s ease; /* Smooth transition */
+}
+
+/* Button styling */
+button {
+    margin-top: var(--gutter-normal);
+    padding: 1rem 2rem;
+    background-color: var(--pink); /* Button background color */
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-normal);
+    border-radius: 4px; /* Slight rounding */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: var(--pink-dark); /* Darker shade on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact__form {
+        padding: 0 var(--gutter-small); /* Add padding on smaller screens */
+    }
+
+    input, textarea {
+        font-size: var(--font-size-smaller); /* Smaller font size for inputs */
+    }
+
+    button {
+        width: 100%; /* Full-width button on small screens */
+    }
 }
 
 /* --------------------------------------- */
