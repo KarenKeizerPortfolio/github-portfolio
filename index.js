@@ -2,14 +2,13 @@
   Have focus outline only for keyboard users 
  ---------------------------------------- */
 
-const handleFirstTab = (e) => {
+ const handleFirstTab = (e) => {
   if(e.key === 'Tab') {
     document.body.classList.add('user-is-tabbing')
 
     window.removeEventListener('keydown', handleFirstTab)
     window.addEventListener('mousedown', handleMouseDownOnce)
   }
-
 }
 
 const handleMouseDownOnce = () => {
@@ -41,3 +40,22 @@ window.addEventListener("scroll", () => {
     alterStyles(isBackToTopRendered);
   }
 });
+
+// Function to clear the contact form
+const clearForm = () => {
+  const form = document.getElementById("contactForm");
+  if (form) {
+    form.reset();
+  }
+};
+
+// Adding event listener to form submission
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    clearForm(); // Clear the form fields
+    // Optionally, you can add any other actions after form submission here
+  });
+}
+
