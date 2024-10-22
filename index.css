@@ -37,9 +37,9 @@
 
      --black: #fff;          /* Opposite of black */
     --pink: #a3c9a1;       /* Changed pink to green */
-    --white: #1a1a1a;      /* Opposite of white */
-    --white-1: #333;      /* Dark gray */
-   
+    --white: #f0e9f2;
+    --white-1: #e5e5e6da;
+
 
 
     --container-max-width: 1180px;
