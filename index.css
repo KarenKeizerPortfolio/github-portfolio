@@ -35,7 +35,7 @@
     --line-height-small: 1.2;
 
 
-     --black: #fff;          /* Opposite of black */
+    --black: #000;          /* Opposite of black */
     --pink: #a3c9a1;       /* Changed pink to green */
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
