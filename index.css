@@ -34,10 +34,12 @@
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
 
-    --black: #000;
-    --pink: #ff3258;
-    --white: #f0e9f2;
-    --white-1: #e5e5e6da;
+
+     --black: #fff;          /* Opposite of black */
+    --pink: #28a745;       /* Changed pink to green */
+    --white: #1a1a1a;      /* Opposite of white */
+    --white-1: #1a1a1a;    /* Dark gray */
+   
 
 
     --container-max-width: 1180px;
