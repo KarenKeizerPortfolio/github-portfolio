@@ -45,17 +45,41 @@ window.addEventListener("scroll", () => {
 const clearForm = () => {
   const form = document.getElementById("contactForm");
   if (form) {
-    form.reset();
+      form.reset();
   }
 };
 
 // Adding event listener to form submission
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    clearForm(); // Clear the form fields
-    // Optionally, you can add any other actions after form submission here
+  contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault(); // Prevent default form submission behavior
+      
+      const formData = new FormData(contactForm);
+
+      // Submit the form data using Fetch API
+      try {
+          const response = await fetch("https://formspree.io/f/mrgnwjoo", {
+              method: "POST",
+              body: formData,
+              headers: {
+                  Accept: "application/json"
+              }
+          });
+
+          if (response.ok) {
+              // Clear the form fields
+              clearForm();
+              // Optionally display a success message
+              alert("Message sent successfully!");
+          } else {
+              // Handle errors
+              alert("There was a problem sending your message.");
+          }
+      } catch (error) {
+          console.error("Error:", error);
+          alert("There was a problem sending your message.");
+      }
   });
 }
 
